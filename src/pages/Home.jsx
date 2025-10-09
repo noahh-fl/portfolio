@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import FadeSection from "../components/FadeSection.jsx";
 import SandboxEmbed from "../components/SandboxEmbed.jsx";
 import TechPill from "../components/TechPill.jsx";
-import CtaTerminal from "../components/CtaTerminal.jsx";
 import SnapDots from "../components/SnapDots.jsx";
 import { featured, minis } from "../data/projects";
 import { techStack } from "../data/techStack";
+import bitefinderGallery from "../assets/mockups/bitefinder-mockup.webp";
+import starwarsGalleryOne from "../assets/mockups/starwars-mockup1.webp";
+import starwarsGalleryTwo from "../assets/mockups/starwars-mockup2.webp";
 
 export default function Home() {
   const top = featured.slice(0, 3);
@@ -35,7 +37,7 @@ export default function Home() {
         </p>
         <div className="flex items-center justify-center gap-3">
           <Link className="btn" to="/projects">View Projects</Link>
-          <a className="btn" href="https://github.com/noahflewelling" target="_blank" rel="noreferrer">
+          <a className="btn" href="https://github.com/noahh-fl" target="_blank" rel="noreferrer">
             GitHub
           </a>
         </div>
@@ -46,15 +48,13 @@ export default function Home() {
           <header className="space-y-1 text-center md:text-left">
             <p className="text-xs uppercase tracking-[0.35em] text-white/40">Toolkit</p>
             <h2 className="text-2xl font-semibold">Tech Stack</h2>
-            <p className="text-white/60 text-xs leading-relaxed max-w-xl">
-              Lightweight cards for a quick glance at the tools I lean on every day.
-            </p>
+            <p className="text-white/60 text-xs leading-relaxed max-w-xl">the tools i'm most comfortable with.</p>
           </header>
           <div className="grid grid-cols-1 gap-12 sm:grid-cols-3">
             {techStack.map(item => (
               <article
                 key={item.name}
-                className="card flex flex-col items-center gap-3 border border-white/10 p-5 text-center transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-white/35"
+                className="card flex flex-col items-center gap-3 border border-white/10 p-5 text-center transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-white/35 cursor-default"
               >
                 <div
                   className={`flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 backdrop-blur-sm ${
@@ -70,13 +70,20 @@ export default function Home() {
         </section>
       </FadeSection>
 
-      <FadeSection innerClassName="space-y-4" sectionId={2} onActivate={setActiveSection}>
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold">Featured</h2>
-          <div className="grid gap-5 md:grid-cols-3">
+      <FadeSection innerClassName="space-y-5" sectionId={2} onActivate={setActiveSection}>
+        <section className="space-y-5">
+          <header className="space-y-1 text-center md:text-left">
+            <p className="text-xs uppercase tracking-[0.35em] text-white/40">Showcase</p>
+            <h2 className="text-2xl font-semibold">Featured</h2>
+            <p className="text-white/60 text-xs leading-relaxed max-w-xl">my best work.</p>
+          </header>
+          <div className="space-y-5">
             {top.map(p => (
-              <article key={p.slug} className="card p-4 space-y-3">
-                <div className="aspect-video overflow-hidden rounded-xl border border-white/10 bg-white/5">
+              <article
+                key={p.slug}
+                className="card overflow-hidden border border-white/10 bg-white/5 md:grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]"
+              >
+                <div className="aspect-video w-full bg-white/5 border-b border-white/10 md:border-b-0 md:border-r md:border-white/10">
                   {p.thumbnail ? (
                     <img
                       src={p.thumbnail}
@@ -90,7 +97,7 @@ export default function Home() {
                     </div>
                   )}
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3 p-5">
                   <div className="space-y-1">
                     <h3 className="font-semibold">{p.title}</h3>
                     <p className="text-sm text-white/70">{p.subtitle}</p>
@@ -159,47 +166,46 @@ export default function Home() {
         </section>
       </FadeSection>
 
-      <FadeSection innerClassName="max-w-4xl" sectionId={4} onActivate={setActiveSection}>
-        <section className="grid gap-8 md:grid-cols-[1fr_1.35fr] items-stretch">
-          <article className="cta-card space-y-5">
-            <header className="cta-card__header">
-              <div className="cta-card__avatar">NF</div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.32em] text-white/50">Let’s build something together</p>
-                <h2 className="text-2xl font-semibold text-white flex items-center gap-2">
-                  Noah Flewelling
-                  <span aria-hidden>🚀</span>
-                </h2>
-              </div>
-            </header>
-            <p className="cta-card__meta">
-              I’m Noah — a product-minded developer who enjoys shaping ideas from sketch → prototype → launch. Remote-first, open to
-              front-end or full-stack roles, and always curious about new challenges.
+      <FadeSection innerClassName="max-w-5xl" sectionId={4} onActivate={setActiveSection}>
+        <section className="grid gap-8 md:grid-cols-[1.15fr_minmax(0,0.85fr)] items-start">
+          <article className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.35em] text-white/40">Hey there</p>
+            <h2 className="text-2xl font-semibold text-white">hey! my name’s noah.</h2>
+            <p className="text-sm text-white/70 leading-relaxed">
+              i grew up glued to whatever computer i could borrow, learning how to make little videos, graphics, and eventually
+              code. now i’m chasing that same curiosity through thoughtful ui work and collaborative builds.
             </p>
-            <ul className="space-y-1.5 text-sm text-white/70">
-              <li><span aria-hidden>📍</span> Based in Tampa, FL (open to remote)</li>
-              <li><span aria-hidden>💻</span> Portfolio projects: React, Flask, Tailwind, Bootstrap</li>
-              <li><span aria-hidden>🤝</span> I care about teamwork, design, and shipping real things</li>
-            </ul>
-            <div className="cta-card__links">
-              <a className="btn" href="mailto:noah@example.com">Email me</a>
-              <a className="btn" href="https://github.com/noahflewelling" target="_blank" rel="noreferrer">GitHub</a>
-              <a className="btn" href="https://www.linkedin.com/in/noahflewelling" target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
-            <div className="space-y-1 pt-3 text-sm text-white/65">
-              <p className="text-xs uppercase tracking-[0.3em] text-white/45">Fun fact</p>
-              <p>When I’m not coding, you’ll find me experimenting in the kitchen or tinkering with side projects.</p>
-            </div>
+            <p className="text-sm text-white/70 leading-relaxed">
+              these days it’s me, a laptop, and a lot of sketches—shaping ideas into something people actually enjoy using. i love
+              listening, iterating, and making sure every screen has a bit of heart in it.
+            </p>
+            <Link to="/about" className="text-sm text-white/60 underline-offset-8 transition-colors hover:text-white">
+              more about me here.
+            </Link>
           </article>
-          <CtaTerminal
-            lines={[
-              { prompt: "$", text: "lets build something together" },
-              { prompt: "$", text: "ship polished UX with React & Tailwind" },
-              { prompt: "$", text: "wire APIs, automate workflows, deliver results" },
-              { prompt: "$", text: "partner with teams that value thoughtful craft" },
-            ]}
-            className="h-full"
-          />
+          <div className="grid grid-cols-2 gap-3">
+            <img
+              src={bitefinderGallery}
+              alt="bitefinder project mockup"
+              className="h-32 w-full rounded-lg object-cover object-center border border-white/10"
+              loading="lazy"
+            />
+            <img
+              src={starwarsGalleryOne}
+              alt="star wars interface mockup"
+              className="h-32 w-full rounded-lg object-cover object-center border border-white/10"
+              loading="lazy"
+            />
+            <img
+              src={starwarsGalleryTwo}
+              alt="galactic project preview"
+              className="h-32 w-full rounded-lg object-cover object-center border border-white/10"
+              loading="lazy"
+            />
+            <div className="h-32 w-full rounded-lg border border-dashed border-white/15 bg-white/5 grid place-items-center text-xs uppercase tracking-[0.3em] text-white/40">
+              more coming soon
+            </div>
+          </div>
         </section>
       </FadeSection>
     </div>

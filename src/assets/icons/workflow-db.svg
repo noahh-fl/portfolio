@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="workflowDbTitle">
+  <title id="workflowDbTitle">Database</title>
+  <defs>
+    <linearGradient id="workflowDbBg" x1="6" y1="10" x2="42" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101f35" />
+      <stop offset="1" stop-color="#1a355a" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#workflowDbBg)" />
+  <ellipse cx="24" cy="16" rx="11" ry="5" fill="#112a46" stroke="#cde2ff" stroke-width="2" />
+  <path d="M13 16v8.5c0 3 4.9 5.5 11 5.5s11-2.5 11-5.5V16" fill="#122b48" stroke="#a9d9ff" stroke-width="2" />
+  <path d="M13 24.3c0 3 4.9 5.4 11 5.4s11-2.4 11-5.4" fill="none" stroke="#78c4ff" stroke-width="2" stroke-linecap="round" />
+</svg>

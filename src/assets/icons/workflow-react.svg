@@ -1,0 +1,16 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="workflowReactTitle">
+  <title id="workflowReactTitle">React UI</title>
+  <defs>
+    <radialGradient id="workflowReactBg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(24 24) scale(22)">
+      <stop offset="0" stop-color="#12263f" />
+      <stop offset="1" stop-color="#0a1428" />
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#workflowReactBg)" />
+  <circle cx="24" cy="24" r="3.6" fill="#8be0ff" />
+  <g fill="none" stroke="#b2ecff" stroke-width="2.2" stroke-linecap="round">
+    <ellipse cx="24" cy="24" rx="11" ry="5.6" transform="rotate(0 24 24)" />
+    <ellipse cx="24" cy="24" rx="11" ry="5.6" transform="rotate(60 24 24)" />
+    <ellipse cx="24" cy="24" rx="11" ry="5.6" transform="rotate(120 24 24)" />
+  </g>
+</svg>

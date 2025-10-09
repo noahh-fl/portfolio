@@ -1,0 +1,22 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="workflowApiTitle">
+  <title id="workflowApiTitle">API</title>
+  <defs>
+    <linearGradient id="workflowApiBg" x1="8" y1="10" x2="40" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d1a2f" />
+      <stop offset="1" stop-color="#1a3154" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#workflowApiBg)" />
+  <path
+    d="M16 19.5 11.5 24 16 28.5m16-9 4.5 4.5-4.5 4.5"
+    fill="none"
+    stroke="#a9d9ff"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <rect x="18.5" y="17" width="11" height="14" rx="2.5" fill="#102742" stroke="#d5e9ff" stroke-width="2" />
+  <path d="M21 22.5h6" stroke="#8ad6ff" stroke-width="2" stroke-linecap="round" />
+  <path d="M21 27.5h6" stroke="#8ad6ff" stroke-width="2" stroke-linecap="round" />
+  <circle cx="24" cy="20.5" r="1.8" fill="#ffd166" />
+</svg>

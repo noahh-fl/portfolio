@@ -1,0 +1,22 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>NF star favicon</title>
+  <defs>
+    <linearGradient id="bg" x1="12" x2="52" y1="8" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#091430" />
+      <stop offset="1" stop-color="#071023" />
+    </linearGradient>
+    <radialGradient id="star-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46 24) scale(11)">
+      <stop offset="0" stop-color="#FFD9A3" stop-opacity="0.95" />
+      <stop offset="0.55" stop-color="#FF9F68" stop-opacity="0.8" />
+      <stop offset="1" stop-color="#F9623E" stop-opacity="0.2" />
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)" />
+  <text x="24" y="38" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="28" font-weight="700" fill="#E9F1FF" letter-spacing="0.5">
+    NF
+  </text>
+  <g transform="translate(44 26)">
+    <circle cx="0" cy="0" r="9" fill="url(#star-glow)" />
+    <path d="M0 -6.5 L1.9 -1.2 L7.0 -1.2 L2.9 1.7 L4.5 6.4 L0 3.5 L-4.5 6.4 L-2.9 1.7 L-7.0 -1.2 L-1.9 -1.2 Z" fill="#FFE6B0" stroke="#FF9A5F" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+</svg>

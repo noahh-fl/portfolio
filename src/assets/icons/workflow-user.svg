@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="workflowUserTitle">
+  <title id="workflowUserTitle">User</title>
+  <defs>
+    <linearGradient id="workflowUserBg" x1="10" y1="6" x2="38" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f1c32" />
+      <stop offset="1" stop-color="#1c3158" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#workflowUserBg)" />
+  <circle cx="24" cy="18" r="7" fill="none" stroke="#dce6ff" stroke-width="2.4" stroke-linejoin="round" />
+  <path
+    d="M13.5 35.5c2.2-5.8 7-8.7 10.5-8.7s8.3 2.9 10.5 8.7"
+    fill="none"
+    stroke="#9ad1ff"
+    stroke-width="2.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="34" cy="14" r="3.5" fill="#ffd166" opacity="0.85" />
+</svg>

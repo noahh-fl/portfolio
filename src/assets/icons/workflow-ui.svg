@@ -1,0 +1,14 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="workflowUiTitle">
+  <title id="workflowUiTitle">Interface</title>
+  <defs>
+    <linearGradient id="workflowUiBg" x1="12" y1="8" x2="36" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0e1a30" />
+      <stop offset="1" stop-color="#1c2f52" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#workflowUiBg)" />
+  <rect x="13" y="16" width="22" height="16" rx="3" fill="#132849" stroke="#d5e6ff" stroke-width="2" />
+  <path d="M13 21h22" stroke="#8ec7ff" stroke-width="2" stroke-linecap="round" />
+  <circle cx="18" cy="28" r="2.4" fill="#8be9ff" />
+  <rect x="22.5" y="26.4" width="10" height="3.2" rx="1.6" fill="#ffd166" />
+</svg>

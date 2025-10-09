@@ -1,0 +1,24 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="workflowContextTitle">
+  <title id="workflowContextTitle">Context</title>
+  <defs>
+    <linearGradient id="workflowContextBg" x1="10" y1="8" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f1d30" />
+      <stop offset="1" stop-color="#203557" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#workflowContextBg)" />
+  <g fill="#8be9ff" opacity="0.9">
+    <circle cx="24" cy="18" r="3.2" />
+    <circle cx="16" cy="29" r="3" />
+    <circle cx="32" cy="29" r="3" />
+  </g>
+  <path
+    d="M24 21v6m0 0l-6.5 3.5m6.5-3.5l6.5 3.5"
+    fill="none"
+    stroke="#cfe6ff"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="24" cy="33.5" r="2.6" fill="#ffd166" />
+</svg>

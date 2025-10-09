@@ -1,0 +1,15 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="workflowFormTitle">
+  <title id="workflowFormTitle">Form Flow</title>
+  <defs>
+    <linearGradient id="workflowFormBg" x1="8" y1="6" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101d32" />
+      <stop offset="1" stop-color="#1f3354" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="12" fill="url(#workflowFormBg)" />
+  <rect x="15" y="12" width="18" height="24" rx="4" fill="#102743" stroke="#d0e5ff" stroke-width="2" />
+  <path d="M19 18h10" stroke="#8fcaff" stroke-width="2" stroke-linecap="round" />
+  <path d="M19 23h10" stroke="#8fcaff" stroke-width="2" stroke-linecap="round" />
+  <circle cx="19" cy="30" r="2.4" fill="#ffd166" />
+  <path d="M23.5 30h6.5" stroke="#b8dcff" stroke-width="2" stroke-linecap="round" />
+</svg>

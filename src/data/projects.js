@@ -28,6 +28,10 @@ import swSqlFavoriteModel from "../assets/SW-SQL-ss/code.ex-ss.png";
 import contactListList from "../assets/contactlist-ss/contactlist.exp-ss.png";
 import contactListInlineForm from "../assets/contactlist-ss/contact.exp-ss.png";
 import contactListDemo from "../assets/contactlist-ss/contactlist-demo.mov";
+import uiLabThumb from "../assets/ui lab/main-ss.png";
+import uiLabCodeDrawer from "../assets/ui lab/code.snippet-ss.png";
+import uiLabDemoA from "../assets/ui lab/demo1.mov";
+import uiLabDemoB from "../assets/ui lab/demo2.mov";
 
 export const featured = [
   {
@@ -194,31 +198,35 @@ export const featured = [
     },
   },
   {
-    slug: "photo-feed-bootstrap",
-    title: "Photo Feed UI (Bootstrap)",
-    subtitle: "Responsive social feed layout with modal posting",
-    tech: ["HTML", "CSS", "Bootstrap"],
-    githubUrl: "https://github.com/4GeeksAcademy/nooah-photo-feed-bootstrap",
+    slug: "ui-lab",
+    title: "UI Lab — Interface Playground",
+    subtitle: "Production-ready component gallery for React & Next teams",
+    tech: ["React 19", "Next.js 15.5", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    githubUrl: "https://github.com/noahh-fl/my-ui-lab",
     liveUrl: "",
-    sandboxUrl: "https://stackblitz.com/github/4GeeksAcademy/nooah-photo-feed-bootstrap?file=index.html",
-    origin: "school",
-    categories: ["school"],
-    gallery: [
-      "https://placehold.co/1280x720/0f172a/ffffff?text=Feed+Desktop",
-      "https://placehold.co/600x900/020617/ffffff?text=Feed+Mobile",
-    ],
-    summary: "Pixel-polished UI build that proves comfort with layout systems, alignment, and component theming.",
+    sandboxUrl: "",
+    origin: "personal",
+    categories: ["personal", "quality"],
+    thumbnail: uiLabThumb,
+    gallery: [uiLabThumb, uiLabCodeDrawer],
+    media: {
+      images: [uiLabThumb, uiLabCodeDrawer],
+      videos: [uiLabDemoA, uiLabDemoB],
+    },
+    summary:
+      "Single-page Next.js lab that spotlights polished UI sections you can preview, inspect, and copy straight into live products.",
     caseStudy: {
       problem:
-        "Recreate a social-style feed that stayed consistent across screen sizes while showcasing clean card design and interactions.",
+        "Designers and engineers kept context switching between demos, repos, and snippets to reuse interface patterns, slowing delivery.",
       solution:
-        "Leveraged Bootstrap's grid utilities with custom CSS tweaks for spacing, built card variations, and wired a modal form demo for posting.",
-      techStack: "HTML, CSS, Bootstrap",
+        "Built a cinematic, component-first playground with live previews, collapsible code drawers, and instant copy actions so reusable UI ships faster.",
+      techStack: "Next.js 15.5, React 19, TypeScript, Tailwind CSS, Framer Motion, react-syntax-highlighter",
       role:
-        "Solo UI engineer — focused on responsive spacing, component reuse, and hover/active feedback.",
+        "Solo front-end engineer shepherding component architecture, motion design, code surfacing, and gallery UX.",
       upgrades: [
-        "Record a short GIF of posting flow",
-        "Highlight responsive breakpoints in README"
+        "Ship themed variants so teams can toggle brand palettes on the fly",
+        "Integrate clipboard analytics to learn which components land most often",
+        "Expand catalog with accessibility notes and responsive breakpoints per pattern",
       ],
     },
   },

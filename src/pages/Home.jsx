@@ -6,16 +6,13 @@ import TechPill from "../components/TechPill.jsx";
 import SnapDots from "../components/SnapDots.jsx";
 import { featured, minis } from "../data/projects";
 import { techStack } from "../data/techStack";
-import bitefinderGallery from "../assets/mockups/bitefinder-mockup.webp";
-import starwarsGalleryOne from "../assets/mockups/starwars-mockup1.webp";
-import starwarsGalleryTwo from "../assets/mockups/starwars-mockup2.webp";
 
 export default function Home() {
   const top = featured.slice(0, 3);
   const [activeMiniSlug, setActiveMiniSlug] = useState(minis[0]?.slug ?? null);
   const activeMini = minis.find(m => m.slug === activeMiniSlug);
   const [activeSection, setActiveSection] = useState(0);
-  const sectionCount = 5;
+  const sectionCount = 4;
 
   return (
     <div className="snap-y snap-mandatory h-full">
@@ -44,7 +41,7 @@ export default function Home() {
       </FadeSection>
 
       <FadeSection innerClassName="space-y-5" sectionId={1} onActivate={setActiveSection}>
-        <section className="space-y-5">
+        <section className="space-y-5 max-w-5xl mx-auto">
           <header className="space-y-1 text-center md:text-left">
             <p className="text-xs uppercase tracking-[0.35em] text-white/40">Toolkit</p>
             <h2 className="text-2xl font-semibold">Tech Stack</h2>
@@ -81,9 +78,9 @@ export default function Home() {
             {top.map(p => (
               <article
                 key={p.slug}
-                className="card overflow-hidden border border-white/10 bg-white/5 md:grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]"
+                className="card overflow-hidden border border-white/10 bg-white/5 md:grid md:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)]"
               >
-                <div className="aspect-video w-full bg-white/5 border-b border-white/10 md:border-b-0 md:border-r md:border-white/10">
+                <div className="aspect-video w-full bg-white/5 border-b border-white/10 md:aspect-auto md:h-full md:min-h-[160px] md:border-b-0 md:border-r md:border-white/10">
                   {p.thumbnail ? (
                     <img
                       src={p.thumbnail}
@@ -97,7 +94,7 @@ export default function Home() {
                     </div>
                   )}
                 </div>
-                <div className="space-y-3 p-5">
+                <div className="space-y-3 p-4">
                   <div className="space-y-1">
                     <h3 className="font-semibold">{p.title}</h3>
                     <p className="text-sm text-white/70">{p.subtitle}</p>
@@ -163,49 +160,6 @@ export default function Home() {
           ) : (
             <p className="text-sm text-white/60">Select a project to load an interactive preview.</p>
           )}
-        </section>
-      </FadeSection>
-
-      <FadeSection innerClassName="max-w-5xl" sectionId={4} onActivate={setActiveSection}>
-        <section className="grid gap-8 md:grid-cols-[1.15fr_minmax(0,0.85fr)] items-start">
-          <article className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/40">Hey there</p>
-            <h2 className="text-2xl font-semibold text-white">hey! my name’s noah.</h2>
-            <p className="text-sm text-white/70 leading-relaxed">
-              i grew up glued to whatever computer i could borrow, learning how to make little videos, graphics, and eventually
-              code. now i’m chasing that same curiosity through thoughtful ui work and collaborative builds.
-            </p>
-            <p className="text-sm text-white/70 leading-relaxed">
-              these days it’s me, a laptop, and a lot of sketches—shaping ideas into something people actually enjoy using. i love
-              listening, iterating, and making sure every screen has a bit of heart in it.
-            </p>
-            <Link to="/about" className="text-sm text-white/60 underline-offset-8 transition-colors hover:text-white">
-              more about me here.
-            </Link>
-          </article>
-          <div className="grid grid-cols-2 gap-3">
-            <img
-              src={bitefinderGallery}
-              alt="bitefinder project mockup"
-              className="h-32 w-full rounded-lg object-cover object-center border border-white/10"
-              loading="lazy"
-            />
-            <img
-              src={starwarsGalleryOne}
-              alt="star wars interface mockup"
-              className="h-32 w-full rounded-lg object-cover object-center border border-white/10"
-              loading="lazy"
-            />
-            <img
-              src={starwarsGalleryTwo}
-              alt="galactic project preview"
-              className="h-32 w-full rounded-lg object-cover object-center border border-white/10"
-              loading="lazy"
-            />
-            <div className="h-32 w-full rounded-lg border border-dashed border-white/15 bg-white/5 grid place-items-center text-xs uppercase tracking-[0.3em] text-white/40">
-              more coming soon
-            </div>
-          </div>
         </section>
       </FadeSection>
     </div>

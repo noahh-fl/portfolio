@@ -50,8 +50,8 @@ export default function ProjectDetail() {
     return <StarWarsReactDetail project={project} />;
   }
 
-  if (project.slug === "photo-feed-bootstrap") {
-    return <PhotoFeedDetail project={project} />;
+  if (project.slug === "ui-lab") {
+    return <UiLabDetail project={project} />;
   }
 
   if (project.slug === "contact-list") {
@@ -450,6 +450,350 @@ function JuiceWrldDetail({ project }) {
           style={{
             '--detail-glow':
               "conic-gradient(from 0deg, rgba(148,163,184,0.08), rgba(148,163,184,0.65), rgba(56,189,248,0.35), rgba(148,163,184,0.08))",
+          }}
+        >
+          <h2 className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">Case study snapshot</h2>
+          <ul className="mt-3 space-y-2 text-sm leading-relaxed">
+            <li>
+              <strong>Problem:</strong> {project.caseStudy.problem}
+            </li>
+            <li>
+              <strong>Solution:</strong> {project.caseStudy.solution}
+            </li>
+            <li>
+              <strong>Tech Stack:</strong> {project.caseStudy.techStack}
+            </li>
+            <li>
+              <strong>Role:</strong> {project.caseStudy.role}
+            </li>
+          </ul>
+          {project.caseStudy.upgrades?.length ? (
+            <div className="mt-4 space-y-2">
+              <p className="text-[0.65rem] uppercase tracking-[0.3em] text-white/55">Up next</p>
+              <ul className="list-disc pl-6 space-y-1.5 text-sm">
+                {project.caseStudy.upgrades.map(item => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
+    </article>
+  );
+}
+
+function UiLabDetail({ project }) {
+  const detail = {
+    strapline: "Front-end component lab · Personal build",
+    heroCopy:
+      "Next.js 15.5 playground that spotlights production-ready UI sections you can preview, inspect, and drop into your next sprint without breaking flow.",
+    highlight:
+      "Gallery cards span navigation, media, layout, branding, and carousel experiences with a cinematic glassmorphism theme, neon-cyan lighting, and Geist Sans/Mono typography.",
+    componentSections: [
+      {
+        title: "Navigation",
+        points: [
+          "Responsive navbar pairs desktop links with a mobile drawer, launch CTA, and copy-ready Next.js Link wiring.",
+          "Sticky left rail keeps category jumps within thumb reach while radial lighting pulses to orient the viewer.",
+        ],
+      },
+      {
+        title: "Branding",
+        points: [
+          "Framer Motion carousel revolves logos with drag momentum, hover pause, and tilt that reacts to velocity.",
+          "Motion values drive depth so stakeholders can feel the brand system before implementation.",
+        ],
+      },
+      {
+        title: "Media",
+        points: [
+          "Image zoom gallery tracks pointer position to set the zoom origin and surface attribution gradients.",
+          "Animated thumbnail rail keeps large assets tactile without overwhelming the hero canvas.",
+        ],
+      },
+      {
+        title: "Carousels",
+        points: [
+          "Autoplay hero slider blends gradient scenes, timed transitions, and accessible dot controls.",
+          "Manual variant pairs hero slides with interactive thumbnails so teams can scrub the interaction feel.",
+        ],
+      },
+      {
+        title: "Layouts",
+        points: [
+          "Hero and grid patterns lean on marketing storytelling, clear calls-to-action, and hover micro-interactions.",
+          "Adaptive columns show how the primitives respond to breakpoints while keeping copy readable.",
+        ],
+      },
+    ],
+    interactionDetails: [
+      "Code drawers sit beneath each showcase, maxed at 4xl, using react-syntax-highlighter (One Dark) so Tailwind strings stay readable.",
+      "Copy buttons debounce success, flip to a “Copied” checkmark, and fail gracefully with console warnings.",
+      "Cards stack border glows, drop shadows, and hover rings to keep cohesion across varied content blocks.",
+    ],
+    copyWorkflow: [
+      "Full-size and compact copy buttons let designers grab JSX or Tailwind without hunting through repos.",
+      "Drawers collapse on ESC, click-away, or copy confirmation to keep interaction tempo fast.",
+      "Long lines auto-wrap with preserved indentation so engineers can paste clean snippets.",
+    ],
+    techHighlights: [
+      {
+        label: "Framework",
+        items: ["Next.js App Router", "React 19 server/client boundaries", "TypeScript strict mode"],
+      },
+      {
+        label: "Styling",
+        items: ["Tailwind CSS v4 via @tailwindcss/postcss", "Glassmorphism theme with neon-cyan cues", "CSS vars driving Geist Sans/Mono"],
+      },
+      {
+        label: "Motion & utilities",
+        items: ["Framer Motion carousel momentum", "react-syntax-highlighter (One Dark)", "next/image optimization", "Custom SVG control icons"],
+      },
+    ],
+    extensibility: [
+      "Component registry in src/components/gallery/component-gallery.tsx adds showcases via a single ComponentEntry.",
+      "Categories auto-group with useMemo so sidebar counts and headings refresh instantly.",
+      "Tailwind utility approach makes theming swappable—brands can override tokens without rewiring layouts.",
+    ],
+    flow: [
+      { label: "Component registry & metadata", iconKey: "react" },
+      { label: "Category memoization", iconKey: "context" },
+      { label: "Next.js App Router surface", iconKey: "api" },
+      { label: "Tailwind + motion layer", iconKey: "ui" },
+    ],
+  };
+
+  const heroShot = project.media?.images?.[0] ?? project.thumbnail;
+  const codeShot = project.media?.images?.[1];
+  const videos = project.media?.videos ?? [];
+  const flowPalette = [
+    "rgba(56,189,248,0.45)",
+    "rgba(129,140,248,0.45)",
+    "rgba(14,165,233,0.45)",
+    "rgba(236,72,153,0.45)",
+  ];
+  const flowSteps = detail.flow.map((step, index) => ({
+    label: step.label,
+    icon: workflowIconMap[step.iconKey] ?? workflowIconMap.ui,
+    accent: flowPalette[index % flowPalette.length],
+  }));
+
+  return (
+    <article className="project-detail mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-24">
+      <div className="pt-6">
+        <Link
+          to="/projects"
+          className="back-link inline-flex items-center gap-2 border border-white/20 bg-white/5 px-3 py-1 text-[0.6rem] uppercase tracking-[0.45em] text-white/70 transition hover:border-white/40 hover:text-white no-underline hover:no-underline"
+        >
+          <span aria-hidden="true">←</span>
+          Back
+        </Link>
+      </div>
+
+      <header className="grid gap-6 lg:grid-cols-[1.8fr_1fr]">
+        <div className="space-y-4">
+          <p className="text-xs uppercase tracking-[0.35em] text-white/45">{detail.strapline}</p>
+          <h1 className="text-4xl font-semibold text-white">{project.title}</h1>
+          <p className="text-white/70 max-w-3xl leading-relaxed">{detail.heroCopy}</p>
+          <p className="text-sm text-white/60">{detail.highlight}</p>
+          <div className="flex flex-wrap gap-1.5">
+            {project.tech.map(item => (
+              <TechPill key={`tech-${item}`} label={item} variant="box" />
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <a className="btn" href={project.githubUrl} target="_blank" rel="noreferrer">
+              View Repo
+            </a>
+            {project.liveUrl ? (
+              <a className="btn" href={project.liveUrl} target="_blank" rel="noreferrer">
+                Live
+              </a>
+            ) : null}
+          </div>
+        </div>
+        <div
+          className="detail-slab bg-slate-900/55 p-6 text-sm text-white/75"
+          style={{
+            '--detail-glow':
+              "conic-gradient(from 0deg, rgba(99,102,241,0.08), rgba(56,189,248,0.55), rgba(236,72,153,0.35), rgba(99,102,241,0.08))",
+          }}
+        >
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">Copy-to-production flow</p>
+          <ul className="mt-3 space-y-2 leading-relaxed">
+            {detail.copyWorkflow.map(item => (
+              <li key={item} className="flex gap-2">
+                <span aria-hidden="true">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </header>
+
+      {heroShot ? (
+        <section
+          className="detail-frame relative overflow-hidden bg-slate-900/60 p-4"
+          style={{
+            '--detail-glow':
+              "conic-gradient(from 0deg, rgba(236,72,153,0.08), rgba(56,189,248,0.65), rgba(129,140,248,0.35), rgba(236,72,153,0.08))",
+          }}
+        >
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-500/15 via-transparent to-purple-500/20" />
+          <img src={heroShot} alt={`${project.title} gallery overview`} className="relative w-full border border-white/10 object-cover" />
+        </section>
+      ) : null}
+
+      {detail.componentSections.length ? (
+        <section className="grid gap-4 lg:grid-cols-2">
+          {detail.componentSections.map(section => (
+            <div
+              key={section.title}
+              className="detail-slab bg-slate-900/50 p-5 text-sm text-white/75"
+              style={{
+                '--detail-glow':
+                  "conic-gradient(from 0deg, rgba(56,189,248,0.08), rgba(56,189,248,0.6), rgba(14,165,233,0.35), rgba(56,189,248,0.08))",
+              }}
+            >
+              <p className="text-[0.7rem] uppercase tracking-[0.3em] text-white/55">{section.title}</p>
+              <ul className="mt-3 space-y-2 leading-relaxed">
+                {section.points.map(point => (
+                  <li key={`${section.title}-${point}`} className="flex gap-2">
+                    <span aria-hidden="true">•</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </section>
+      ) : null}
+
+      <section
+        className="detail-slab bg-slate-900/45 p-6"
+        style={{
+          '--detail-glow':
+            "conic-gradient(from 0deg, rgba(129,140,248,0.08), rgba(129,140,248,0.65), rgba(56,189,248,0.35), rgba(129,140,248,0.08))",
+        }}
+      >
+        <h2 className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">Interaction & UX touches</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white/80">
+          {detail.interactionDetails.map(item => (
+            <li key={item} className="flex gap-2">
+              <span aria-hidden="true">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {codeShot ? (
+        <section
+          className="detail-frame relative overflow-hidden bg-slate-900/60 p-4"
+          style={{
+            '--detail-glow':
+              "conic-gradient(from 0deg, rgba(14,165,233,0.08), rgba(14,165,233,0.6), rgba(99,102,241,0.35), rgba(14,165,233,0.08))",
+          }}
+        >
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-sky-500/20 via-transparent to-rose-500/15" />
+          <img src={codeShot} alt={`${project.title} code drawer`} className="relative w-full border border-white/10 object-cover" />
+        </section>
+      ) : null}
+
+      {detail.techHighlights.length ? (
+        <section className="grid gap-4 lg:grid-cols-3">
+          {detail.techHighlights.map(group => (
+            <div
+              key={group.label}
+              className="detail-slab bg-slate-900/50 p-5 text-sm text-white/75"
+              style={{
+                '--detail-glow':
+                  "conic-gradient(from 0deg, rgba(236,72,153,0.08), rgba(236,72,153,0.6), rgba(129,140,248,0.35), rgba(236,72,153,0.08))",
+              }}
+            >
+              <p className="text-[0.7rem] uppercase tracking-[0.3em] text-white/55">{group.label}</p>
+              <ul className="mt-3 space-y-2 leading-relaxed">
+                {group.items.map(item => (
+                  <li key={`${group.label}-${item}`} className="flex gap-2">
+                    <span aria-hidden="true">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </section>
+      ) : null}
+
+      <section
+        className="detail-slab bg-slate-900/45 p-6"
+        style={{
+          '--detail-glow':
+            "conic-gradient(from 0deg, rgba(99,102,241,0.08), rgba(99,102,241,0.65), rgba(56,189,248,0.35), rgba(99,102,241,0.08))",
+        }}
+      >
+        <h2 className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">Workflow</h2>
+        <div className="detail-workflow">
+          {flowSteps.map((step, index) => (
+            <div key={`${step.label}-${index}`} className="detail-workflow__item" style={{ '--node-accent': step.accent }}>
+              <div className="detail-workflow__node" aria-hidden="true">
+                <img src={step.icon} alt={`${step.label} icon`} className="detail-workflow__icon" />
+              </div>
+              <p className="detail-workflow__label">{step.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {videos.length ? (
+        <section className="grid gap-4 lg:grid-cols-2">
+          {videos.map((videoSrc, index) => (
+            <div
+              key={`ui-lab-video-${index}`}
+              className="detail-frame relative overflow-hidden bg-slate-900/60 p-4"
+              style={{
+                '--detail-glow':
+                  "conic-gradient(from 0deg, rgba(56,189,248,0.08), rgba(56,189,248,0.65), rgba(236,72,153,0.35), rgba(56,189,248,0.08))",
+              }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-transparent to-purple-500/15" />
+              <video
+                src={videoSrc}
+                controls
+                className="relative w-full border border-white/10"
+                preload="metadata"
+                playsInline
+              />
+            </div>
+          ))}
+        </section>
+      ) : null}
+
+      <section
+        className="detail-slab bg-slate-900/45 p-6 text-white/75"
+        style={{
+          '--detail-glow':
+            "conic-gradient(from 0deg, rgba(148,163,184,0.08), rgba(148,163,184,0.65), rgba(56,189,248,0.35), rgba(148,163,184,0.08))",
+        }}
+      >
+        <h2 className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">Extensibility hooks</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed">
+          {detail.extensibility.map(item => (
+            <li key={item} className="flex gap-2">
+              <span aria-hidden="true">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {project.caseStudy ? (
+        <section
+          className="detail-slab bg-slate-900/45 p-6 text-white/75"
+          style={{
+            '--detail-glow':
+              "conic-gradient(from 0deg, rgba(236,72,153,0.08), rgba(236,72,153,0.6), rgba(129,140,248,0.35), rgba(236,72,153,0.08))",
           }}
         >
           <h2 className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">Case study snapshot</h2>

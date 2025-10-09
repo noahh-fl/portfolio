@@ -5,7 +5,7 @@ export default function ContactCard() {
         <p className="text-xs uppercase tracking-[0.28em] text-white/45">open to collaborate</p>
         <h2 className="text-2xl font-semibold text-white">let's build something</h2>
         <p className="text-white/70 max-w-2xl text-sm leading-relaxed">
-          remote-first teammate who loves pairing on thoughtful ui and steady product polish.
+          Remote-friendly front-end developer who enjoys pairing on thoughtful UI and steady product polish.
         </p>
       </header>
       <div className="space-y-2 text-sm text-white/70">
@@ -19,7 +19,7 @@ export default function ContactCard() {
           <span className="text-white">Location:</span> Arcata, California (remote preferred)
         </p>
         <p>
-          <span className="text-white">Rhythm:</span> steady, curious, and always sharing progress as it happens.
+          <span className="text-white">Rhythm:</span> steady, communicative, and focused on simple, reliable delivery.
         </p>
       </div>
       <div className="flex flex-wrap gap-3 pt-1">

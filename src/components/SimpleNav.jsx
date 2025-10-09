@@ -5,7 +5,7 @@ const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Projects", to: "/projects" },
-  { label: "GitHub", to: "https://github.com/noahflewelling", external: true },
+  { label: "GitHub", to: "https://github.com/noahh-fl", external: true },
 ];
 
 export default function SimpleNav() {
